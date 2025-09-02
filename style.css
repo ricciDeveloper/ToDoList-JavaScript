@@ -5,7 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
 }
 
 body {
@@ -13,19 +13,49 @@ body {
   color: #333;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   padding: 40px 20px;
 }
 
-/* ===== Container Principal ===== */
-h1{
-    font-size: 2rem;
-    align-items: center;
+footer {
+    margin-top: 30px;
+    padding: 15px 10px;
     text-align: center;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    width: 100%;
+
 }
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #0077cc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #005999;
+    text-decoration: underline;
+}
+
+
+/* ===== Título ===== */
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+/* ===== Container Principal ===== */
 .container {
   background: #fff;
   padding: 30px;
@@ -34,7 +64,7 @@ h1{
   max-width: 450px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   animation: fadeIn 0.6s ease-in-out;
-  
+  margin-bottom: 20px; /* espaço entre o form e a lista */
 }
 
 /* ===== Input e Botão ===== */
@@ -74,11 +104,13 @@ h1{
 /* ===== Lista de Tarefas ===== */
 #task-list {
   list-style: none;
-  margin-top: 25px;
+  padding: 0;
+  width: 100%;
+  max-width: 450px;
 }
 
 #task-list li {
-  background: #f3f4f6;
+  background: #fff;
   padding: 14px 16px;
   margin-bottom: 12px;
   border-radius: 12px;
@@ -86,11 +118,12 @@ h1{
   justify-content: space-between;
   align-items: center;
   transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 #task-list li:hover {
-  background: #e5e7eb;
-  transform: scale(1.02);
+  background: #f9fafb;
+  transform: scale(1.01);
 }
 
 /* ===== Texto da Tarefa ===== */
@@ -98,6 +131,14 @@ h1{
   font-size: 1rem;
   font-weight: 500;
   color: #374151;
+  flex: 1; /* ocupa espaço entre o checkbox e o botão */
+  margin-left: 10px;
+}
+
+/* ===== Checkbox ===== */
+#task-list li input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 /* ===== Botão de Remover ===== */
@@ -108,6 +149,7 @@ h1{
   font-size: 1.2rem;
   transition: transform 0.2s ease, color 0.3s ease;
   color: #6b7280;
+  margin-left: 10px;
 }
 
 .btnRemove:hover {
@@ -137,5 +179,9 @@ h1{
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+
+  #task-list {
+    max-width: 100%;
   }
 }
